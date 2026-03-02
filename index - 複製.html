@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Precision in Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'k-bg': '#F9F9F7',
+                        'k-main': '#1A1A1A',
+                        'k-sub': '#8C8C8C',
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9F9F7; color: #1A1A1A; font-family: 'Noto Sans TC', sans-serif; }
+        .serif-title { font-family: 'Noto Serif TC', serif; }
+        .section-spacing { padding-top: 120px; padding-bottom: 120px; }
+    </style>
+</head>
+<body class="selection:bg-gray-200">
+
+    <nav class="fixed w-full top-0 z-50 bg-k-bg/80 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+            <span class="serif-title text-xl tracking-widest font-bold">PORTFOLIO.</span>
+            <div class="space-x-8 text-sm tracking-widest text-k-sub uppercase">
+                <a href="#about" class="hover:text-k-main transition-colors">About</a>
+                <a href="#works" class="hover:text-k-main transition-colors">Works</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="min-h-screen flex items-center justify-center px-6">
+        <div class="text-center">
+            <h1 class="serif-title text-4xl md:text-6xl tracking-tighter leading-tight">
+                [你的名字] <span class="block md:inline-block font-light text-k-sub mx-4 opacity-50">/</span> 
+                <span class="block md:inline-block">Precision in Design.</span>
+            </h1>
+            <p class="mt-8 text-k-sub tracking-[0.2em] text-sm uppercase">Visual Communication Design</p>
+        </div>
+    </header>
+
+    <section id="about" class="section-spacing max-w-4xl mx-auto px-6 border-t border-gray-200">
+        <div class="grid md:grid-cols-3 gap-12">
+            <h2 class="serif-title text-3xl italic">About.</h2>
+            <div class="md:col-span-2 space-y-6 text-k-main leading-relaxed">
+                <p class="text-lg">
+                    擁有一顆追求極致精準的心，專注於視覺平衡與印刷製程的完美契合。
+                </p>
+                <div class="grid grid-cols-1 gap-8 mt-12">
+                    <div>
+                        <h3 class="text-xs text-k-sub uppercase tracking-widest mb-2">Education & Cert.</h3>
+                        <p>4 年紮實平面設計專業訓練</p>
+                        <p>國家印前製程乙級技術士證照</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs text-k-sub uppercase tracking-widest mb-2">Experience</h3>
+                        <p>具備 4.5 年穩定職場經歷，深諳團隊協作與專案時程控管，在穩定的工作節奏中持續輸出高質量的設計解決方案。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section-spacing bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="serif-title text-3xl mb-20 text-center italic">Featured Works.</h2>
+
+            <div class="mb-32">
+                <div class="flex items-center mb-10">
+                    <span class="text-xs tracking-[0.3em] uppercase text-k-sub">Category 01</span>
+                    <h3 class="serif-title text-2xl ml-4">大學專題</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="group">
+                        <div class="aspect-[4/3] bg-k-bg rounded-lg shadow-sm overflow-hidden mb-4">
+                            <div class="w-full h-full flex items-center justify-center text-gray-300 italic group-hover:scale-105 transition-transform duration-700">
+                                [ Image Preview ]
+                            </div>
+                        </div>
+                        <p class="text-k-main text-sm font-medium">作品名稱 / Brand Identity</p>
+                        <p class="text-k-sub text-xs mt-1">透過幾何結構重組，詮釋當代城市流動的設計概念。</p>
+                        <p class="text-k-sub text-xs opacity-70 italic">CMYK 印刷完稿 / 獨立出版</p>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-[4/3] bg-k-bg rounded-lg shadow-sm overflow-hidden mb-4">
+                            <div class="w-full h-full flex items-center justify-center text-gray-300 italic group-hover:scale-105 transition-transform duration-700">
+                                [ Image Preview ]
+                            </div>
+                        </div>
+                        <p class="text-k-main text-sm font-medium">專案標題 / Editorial Design</p>
+                        <p class="text-k-sub text-xs mt-1">深入探討傳統工藝與現代極簡主義的共生關係。</p>
+                        <p class="text-k-sub text-xs opacity-70 italic">特裝版裝幀設計 / 網版印刷技術</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center mb-10">
+                    <span class="text-xs tracking-[0.3em] uppercase text-k-sub">Category 02</span>
+                    <h3 class="serif-title text-2xl ml-4">高中專題</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group">
+                        <div class="aspect-square bg-k-bg rounded-lg shadow-sm overflow-hidden mb-4">
+                            <div class="w-full h-full flex items-center justify-center text-gray-300 italic group-hover:scale-105 transition-transform duration-700">
+                                [ Image ]
+                            </div>
+                        </div>
+                        <p class="text-k-main text-sm font-medium">插畫應用設計</p>
+                        <p class="text-k-sub text-xs mt-1">以手繪線條勾勒學生時代的日常風景。</p>
+                        <p class="text-k-sub text-xs opacity-70 italic">數位影像處理 / 噴墨打樣測試</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-gray-100">
+        <p class="serif-title text-sm tracking-widest">THANKS FOR WATCHING.</p>
+        <p class="text-k-sub text-[10px] mt-4 uppercase">© 2024 [你的名字]. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
