@@ -16,6 +16,8 @@
                         'p-green': '#6FBA2C',
                         'p-yellow': '#FAC03D',
                         'p-light': '#FFF67F',
+                        'p-black': '#1A1A1A',
+                        'p-white': '#FFFFFF',
                     },
                     fontFamily: {
                         serif: ['"Noto Serif TC"', 'serif'],
@@ -29,7 +31,6 @@
         body { background-color: #FFFDF5; color: #1A1A1A; font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
         .serif-title { font-family: 'Noto Serif TC', serif; }
         .section-spacing { padding-top: 100px; padding-bottom: 100px; }
-        /* ABOUT 幾何背景 */
         .profile-shape {
             background: #EEDCC6;
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -40,6 +41,7 @@
             50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
             100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="selection:bg-orange-100">
@@ -71,11 +73,11 @@
                 <div class="profile-shape w-64 h-64 md:w-80 md:h-80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
                 <div class="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gray-100">
                     <img src="avatar.jpg" class="w-full h-full object-cover" alt="陳薏如" onerror="this.style.display='none'">
-                    <div class="flex items-center justify-center h-full text-gray-400 italic text-sm">Upload avatar.jpg</div>
+                    <div class="flex items-center justify-center h-full text-gray-400 italic text-sm">Avatar</div>
                 </div>
             </div>
             <div class="space-y-6">
-                <h2 class="serif-title text-3xl italic text-brand-coffee">About.</h2>
+                <h2 class="serif-title text-3xl text-brand-coffee">About.</h2>
                 <p class="text-lg leading-relaxed font-medium">
                     我是陳薏如，擁有一顆追求極致精準的心。以理性建構美感，保留設計情感的敏銳度，讓視覺平衡與印刷呈現之間達到溫度的契合。
                 </p>
@@ -95,7 +97,7 @@
 
     <section id="works" class="section-spacing bg-white/30">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="serif-title text-3xl mb-20 text-center italic border-b-2 border-brand-coffee inline-block mx-auto pb-2">Featured Works.</h2>
+            <h2 class="serif-title text-3xl mb-20 text-center border-b-2 border-brand-coffee inline-block mx-auto pb-2">Featured Works.</h2>
 
             <div class="mb-32">
                 <div class="flex items-center mb-10">
@@ -108,10 +110,25 @@
                         <div class="aspect-[4/5] bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50">
                             <img src="01.jpg" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="主視覺海報">
                         </div>
-                        <h4 class="text-k-dark text-xl font-bold mb-4">忘憂飲 — 主視覺海報</h4>
-                        <div class="bg-site-bg p-5 rounded-2xl border border-orange-100 text-xs space-y-3 mb-6">
-                            <p class="text-gray-600"><strong class="text-brand-coffee">● 標準色規範：</strong> 綠色 (#6FBA2C)、黃色 (#FAC03D)、粉黃 (#FFF67F)。</p>
-                            <p class="text-gray-600"><strong class="text-brand-coffee">● 字體系統：</strong> 搭配無色彩黑白系統，確保排版資訊的嚴謹度。</p>
+                        <h4 class="text-k-dark text-xl font-bold mb-6">忘憂飲 — 主視覺海報</h4>
+                        
+                        <div class="bg-white p-6 rounded-2xl border border-orange-100 space-y-8 shadow-sm">
+                            <div>
+                                <h5 class="text-[10px] font-bold text-brand-coffee uppercase tracking-widest mb-4">Color System / 標準色規範</h5>
+                                <div class="flex space-x-3 mb-4">
+                                    <div class="w-10 h-10 rounded-full border border-gray-100 bg-[#6FBA2C]" title="#6FBA2C"></div>
+                                    <div class="w-10 h-10 rounded-full border border-gray-100 bg-[#FAC03D]" title="#FAC03D"></div>
+                                    <div class="w-10 h-10 rounded-full border border-gray-100 bg-[#FFF67F]" title="#FFF67F"></div>
+                                    <div class="w-10 h-10 rounded-full border border-gray-100 bg-[#1A1A1A]" title="#1A1A1A"></div>
+                                    <div class="w-10 h-10 rounded-full border border-gray-100 bg-[#FFFFFF]" title="#FFFFFF"></div>
+                                </div>
+                                <p class="text-[11px] text-gray-500 leading-relaxed">選色理念：以高明度的草綠與鮮黃展現產品的天然生命力，並輔以無色彩系統確保視覺訊息的純淨與精準度。</p>
+                            </div>
+                            <div>
+                                <h5 class="text-[10px] font-bold text-brand-coffee uppercase tracking-widest mb-3">Typography / 標準字規範</h5>
+                                <div class="text-lg font-bold mb-2 tracking-tighter text-k-dark">忘憂飲 Font Spec.</div>
+                                <p class="text-[11px] text-gray-500 leading-relaxed">選字理念：字體選用具現代感的幾何線條，在維持閱讀識別性的同時，傳遞品牌簡約且富有質感的調性。</p>
+                            </div>
                         </div>
                     </div>
 
@@ -132,7 +149,7 @@
                 </div>
 
                 <div class="mt-20">
-                    <h4 class="serif-title text-xl text-brand-coffee mb-8 italic">Project Extension: 心理測驗企劃</h4>
+                    <h4 class="serif-title text-xl text-brand-coffee mb-8 font-bold">專題數位延伸：心理測驗企劃</h4>
                     <div class="flex overflow-x-auto pb-8 gap-6 no-scrollbar">
                         <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
                             <img src="1.jpg" class="w-full h-full object-cover">
@@ -153,7 +170,6 @@
                             <img src="6.jpg" class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <p class="text-[10px] text-gray-400 mt-2 text-right">← 滑動查看更多企劃內容</p>
                 </div>
             </div>
         </div>
@@ -161,23 +177,35 @@
 
     <section id="contact" class="section-spacing max-w-3xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="serif-title text-3xl italic text-brand-coffee">Contact.</h2>
-            <p class="text-xs text-gray-400 mt-2 uppercase tracking-[0.2em] font-bold">Get in touch with me</p>
+            <h2 class="serif-title text-3xl text-brand-coffee font-bold">Contact.</h2>
+            <p class="text-xs text-gray-400 mt-2 uppercase tracking-[0.2em] font-bold">Get in touch</p>
         </div>
-        <form action="#" method="POST" class="space-y-6">
+        
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
-                <input type="text" placeholder="姓名 Name" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee">
-                <input type="email" placeholder="信箱 Email" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee">
+                <div>
+                    <label class="block text-[10px] font-bold text-brand-coffee uppercase mb-2 ml-1">Name</label>
+                    <input type="text" name="name" placeholder="您的姓名" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee transition shadow-sm" required>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold text-brand-coffee uppercase mb-2 ml-1">Email</label>
+                    <input type="email" name="email" placeholder="您的電子信箱" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee transition shadow-sm" required>
+                </div>
             </div>
-            <textarea placeholder="您的訊息 Message" rows="5" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee"></textarea>
+            <div>
+                <label class="block text-[10px] font-bold text-brand-coffee uppercase mb-2 ml-1">Message</label>
+                <textarea name="message" placeholder="有什麼我可以幫您的嗎？" rows="5" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee transition shadow-sm" required></textarea>
+            </div>
             <div class="text-center">
-                <button type="submit" class="bg-brand-coffee text-white px-12 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-black transition-all shadow-lg">Send Message</button>
+                <button type="submit" class="bg-brand-coffee text-white px-12 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-black transition-all shadow-lg hover:shadow-xl">
+                    Send Message
+                </button>
             </div>
         </form>
     </section>
 
     <footer class="py-20 text-center bg-white/50 border-t border-orange-100">
-        <p class="serif-title text-sm tracking-widest text-brand-coffee uppercase">Thanks for watching</p>
+        <p class="serif-title text-sm tracking-widest text-brand-coffee uppercase font-bold">Thanks for watching</p>
         <p class="text-gray-300 text-[9px] mt-8 uppercase tracking-widest">© 2026 陳薏如. All Rights Reserved.</p>
     </footer>
 
