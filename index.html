@@ -11,11 +11,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'site-bg': '#FFFDF5', /* 舒服且明亮的米黃色背景 */
-                        'p-green': '#6FBA2C', /* 標準色：綠 */
-                        'p-yellow': '#FAC03D', /* 標準色：黃 */
-                        'p-light': '#FFF67F', /* 標準色：粉黃 */
-                        'k-dark': '#1A1A1A',
+                        'site-bg': '#FFFDF5', 
+                        'brand-coffee': '#4B3621',
+                        'p-green': '#6FBA2C',
+                        'p-yellow': '#FAC03D',
+                        'p-light': '#FFF67F',
                     },
                     fontFamily: {
                         serif: ['"Noto Serif TC"', 'serif'],
@@ -29,16 +29,28 @@
         body { background-color: #FFFDF5; color: #1A1A1A; font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
         .serif-title { font-family: 'Noto Serif TC', serif; }
         .section-spacing { padding-top: 100px; padding-bottom: 100px; }
+        /* ABOUT 幾何背景 */
+        .profile-shape {
+            background: #EEDCC6;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
     </style>
 </head>
-<body class="selection:bg-p-light">
+<body class="selection:bg-orange-100">
 
-    <nav class="fixed w-full top-0 z-50 bg-site-bg/90 backdrop-blur-sm border-b border-orange-50">
+    <nav class="fixed w-full top-0 z-50 bg-site-bg/90 backdrop-blur-sm border-b border-orange-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="serif-title text-xl tracking-widest font-bold text-k-dark">PORTFOLIO.</span>
+            <span class="serif-title text-xl tracking-widest font-bold text-brand-coffee">PORTFOLIO.</span>
             <div class="space-x-8 text-sm tracking-widest text-gray-500 uppercase font-medium">
-                <a href="#about" class="hover:text-p-green transition-colors">About</a>
-                <a href="#works" class="hover:text-p-green transition-colors">Works</a>
+                <a href="#about" class="hover:text-brand-coffee transition-colors">About</a>
+                <a href="#works" class="hover:text-brand-coffee transition-colors">Works</a>
+                <a href="#contact" class="hover:text-brand-coffee transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -47,31 +59,34 @@
         <div class="text-center">
             <h1 class="serif-title text-4xl md:text-6xl tracking-tighter leading-tight text-k-dark">
                 陳薏如 <span class="block md:inline-block font-light text-orange-200 mx-4">/</span> 
-                <span class="text-gray-800">Precision in Design.</span>
+                <span class="text-brand-coffee font-bold">Precision in Design.</span>
             </h1>
             <p class="mt-8 text-gray-400 tracking-[0.3em] text-xs uppercase font-bold">Visual Communication Design</p>
         </div>
     </header>
 
-    <section id="about" class="section-spacing max-w-4xl mx-auto px-6 border-t border-orange-100">
-        <div class="grid md:grid-cols-3 gap-12">
-            <h2 class="serif-title text-3xl italic text-gray-800">About.</h2>
-            <div class="md:col-span-2 space-y-6 text-k-dark leading-relaxed">
-                <p class="text-lg font-medium">
-                    以理性建構美感，保留對設計情感的敏銳度，讓視覺平衡與印刷呈現之間達到準確且有溫度的契合。
+    <section id="about" class="section-spacing max-w-5xl mx-auto px-6 border-t border-orange-100">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative flex justify-center">
+                <div class="profile-shape w-64 h-64 md:w-80 md:h-80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+                <div class="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gray-100">
+                    <img src="avatar.jpg" class="w-full h-full object-cover" alt="陳薏如" onerror="this.style.display='none'">
+                    <div class="flex items-center justify-center h-full text-gray-400 italic text-sm">Upload avatar.jpg</div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="serif-title text-3xl italic text-brand-coffee">About.</h2>
+                <p class="text-lg leading-relaxed font-medium">
+                    我是陳薏如，擁有一顆追求極致精準的心。以理性建構美感，保留設計情感的敏銳度，讓視覺平衡與印刷呈現之間達到溫度的契合。
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="p-6 bg-white/50 rounded-2xl shadow-sm border-l-4 border-p-green">
-                        <h3 class="text-xs text-gray-400 uppercase tracking-widest mb-3 font-bold">Education & Cert.</h3>
-                        <ul class="text-sm space-y-2 text-gray-600">
-                            <li>商業設計背景</li>
-                            <li>印前製程乙級及丙級技術士證照</li>
-                            <li>持續深化設計基礎</li>
-                        </ul>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-2 h-2 bg-brand-coffee rounded-full"></span>
+                        <p class="text-sm text-gray-600">商業設計背景，具備 4~5 年服務業經驗。</p>
                     </div>
-                    <div class="p-6 bg-white/50 rounded-2xl shadow-sm border-l-4 border-p-yellow">
-                        <h3 class="text-xs text-gray-400 uppercase tracking-widest mb-3 font-bold">Experience</h3>
-                        <p class="text-sm text-gray-600">4~5 年服務產業經驗，培養穩定執行力，重視作品落地的可行性。</p>
+                    <div class="flex items-center space-x-3">
+                        <span class="w-2 h-2 bg-brand-coffee rounded-full"></span>
+                        <p class="text-sm text-gray-600">持有國家印前製程乙級及丙級技術士證照。</p>
                     </div>
                 </div>
             </div>
@@ -80,78 +95,89 @@
 
     <section id="works" class="section-spacing bg-white/30">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="serif-title text-3xl mb-20 text-center italic border-b-2 border-orange-100 inline-block mx-auto pb-2">Featured Works.</h2>
+            <h2 class="serif-title text-3xl mb-20 text-center italic border-b-2 border-brand-coffee inline-block mx-auto pb-2">Featured Works.</h2>
 
             <div class="mb-32">
                 <div class="flex items-center mb-10">
-                    <span class="px-3 py-1 bg-p-green text-white text-[10px] tracking-widest uppercase rounded">Category 01</span>
-                    <h3 class="serif-title text-2xl ml-4 text-k-dark">大學專題：忘憂飲</h3>
+                    <span class="px-3 py-1 bg-brand-coffee text-white text-[10px] tracking-widest uppercase rounded">Category 01</span>
+                    <h3 class="serif-title text-2xl ml-4 text-k-dark font-bold">大學專題：忘憂飲</h3>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-16">
+                <div class="grid md:grid-cols-2 gap-16 mb-16">
                     <div class="group">
                         <div class="aspect-[4/5] bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50">
                             <img src="01.jpg" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="主視覺海報">
                         </div>
-                        <h4 class="text-k-dark text-xl font-bold mb-2">忘憂飲 — 主視覺海報</h4>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">透過高明度色彩與簡約圖案交織，展現產品純淨本質。</p>
-                        <p class="text-xs text-p-green font-bold flex items-center">
-                            <span class="w-2 h-2 bg-p-green rounded-full mr-2"></span> 視覺排版設計 / 幾何圖案開發
-                        </p>
+                        <h4 class="text-k-dark text-xl font-bold mb-4">忘憂飲 — 主視覺海報</h4>
+                        <div class="bg-site-bg p-5 rounded-2xl border border-orange-100 text-xs space-y-3 mb-6">
+                            <p class="text-gray-600"><strong class="text-brand-coffee">● 標準色規範：</strong> 綠色 (#6FBA2C)、黃色 (#FAC03D)、粉黃 (#FFF67F)。</p>
+                            <p class="text-gray-600"><strong class="text-brand-coffee">● 字體系統：</strong> 搭配無色彩黑白系統，確保排版資訊的嚴謹度。</p>
+                        </div>
                     </div>
 
                     <div class="flex flex-col gap-10">
                         <div class="group">
-                            <div class="aspect-[16/9] bg-white rounded-2xl shadow-md overflow-hidden mb-4 border border-orange-50">
-                                <img src="02.jpg" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="明信片正面">
+                            <div class="aspect-[16/9] bg-white rounded-2xl shadow-md overflow-hidden mb-4">
+                                <img src="02.jpg" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="正面">
                             </div>
-                            <h4 class="text-k-dark text-lg font-bold mb-1">產品介紹明信片 (正面)</h4>
-                            <p class="text-gray-500 text-xs leading-relaxed">將品牌主調轉化為資訊圖表語彙，梳理成分資訊。</p>
-                            <p class="text-[10px] text-p-green mt-1">負責項目：視覺排版設計、視覺主調延伸應用</p>
+                            <h4 class="text-k-dark text-lg font-bold">產品介紹明信片 (正面)</h4>
                         </div>
                         <div class="group">
-                            <div class="aspect-[16/9] bg-white rounded-2xl shadow-md overflow-hidden mb-4 border border-orange-50">
-                                <img src="03.jpg" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="明信片背面">
+                            <div class="aspect-[16/9] bg-white rounded-2xl shadow-md overflow-hidden mb-4">
+                                <img src="03.jpg" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="背面">
                             </div>
-                            <h4 class="text-k-dark text-lg font-bold mb-1">產品介紹明信片 (背面)</h4>
-                            <p class="text-gray-500 text-xs leading-relaxed">確保資訊傳遞的精準性與美感平衡。</p>
+                            <h4 class="text-k-dark text-lg font-bold">產品介紹明信片 (背面)</h4>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="pt-20 border-t border-orange-100">
-                <div class="flex items-center mb-10">
-                    <span class="px-3 py-1 bg-p-yellow text-white text-[10px] tracking-widest uppercase rounded">Category 02</span>
-                    <h3 class="serif-title text-2xl ml-4 text-k-dark">數位延伸與創作</h3>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="group">
-                        <div class="aspect-square rounded-2xl shadow-inner overflow-hidden mb-4 flex items-center justify-center bg-p-light/20 border-2 border-dashed border-p-yellow/30 relative">
-                            <div class="text-center p-6">
-                                <span class="text-p-yellow font-serif italic text-2xl opacity-40">EJ Concept</span>
-                                <p class="text-[10px] text-p-yellow mt-2 font-bold uppercase tracking-widest">Coming Soon</p>
-                            </div>
-                            <div class="absolute bottom-4 right-4 flex space-x-1">
-                                <div class="w-2 h-2 rounded-full bg-p-green/40"></div>
-                                <div class="w-2 h-2 rounded-full bg-p-yellow/40"></div>
-                            </div>
+                <div class="mt-20">
+                    <h4 class="serif-title text-xl text-brand-coffee mb-8 italic">Project Extension: 心理測驗企劃</h4>
+                    <div class="flex overflow-x-auto pb-8 gap-6 no-scrollbar">
+                        <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
+                            <img src="1.jpg" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-k-dark text-base font-bold">數位應用插畫</p>
-                        <p class="text-gray-500 text-xs mt-1">探索影像處理的可能性，以數位語彙轉譯生活靈感。</p>
+                        <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
+                            <img src="2.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
+                            <img src="3.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
+                            <img src="4.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
+                            <img src="5.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="min-w-[280px] aspect-[4/3] bg-white rounded-xl shadow-sm overflow-hidden border border-orange-50 flex-shrink-0">
+                            <img src="6.jpg" class="w-full h-full object-cover">
+                        </div>
                     </div>
+                    <p class="text-[10px] text-gray-400 mt-2 text-right">← 滑動查看更多企劃內容</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center bg-white/50 mt-20">
-        <p class="serif-title text-sm tracking-widest text-gray-400">THANKS FOR WATCHING.</p>
-        <div class="mt-6 flex justify-center space-x-3">
-            <div class="w-3 h-3 rounded-full bg-p-green"></div>
-            <div class="w-3 h-3 rounded-full bg-p-yellow"></div>
-            <div class="w-3 h-3 rounded-full bg-p-light"></div>
+    <section id="contact" class="section-spacing max-w-3xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="serif-title text-3xl italic text-brand-coffee">Contact.</h2>
+            <p class="text-xs text-gray-400 mt-2 uppercase tracking-[0.2em] font-bold">Get in touch with me</p>
         </div>
+        <form action="#" method="POST" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <input type="text" placeholder="姓名 Name" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee">
+                <input type="email" placeholder="信箱 Email" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee">
+            </div>
+            <textarea placeholder="您的訊息 Message" rows="5" class="w-full bg-white border border-orange-100 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-brand-coffee"></textarea>
+            <div class="text-center">
+                <button type="submit" class="bg-brand-coffee text-white px-12 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-black transition-all shadow-lg">Send Message</button>
+            </div>
+        </form>
+    </section>
+
+    <footer class="py-20 text-center bg-white/50 border-t border-orange-100">
+        <p class="serif-title text-sm tracking-widest text-brand-coffee uppercase">Thanks for watching</p>
         <p class="text-gray-300 text-[9px] mt-8 uppercase tracking-widest">© 2026 陳薏如. All Rights Reserved.</p>
     </footer>
 
