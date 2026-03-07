@@ -36,23 +36,19 @@
             50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
             100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
         }
-        /* 極致優化的滑動容器 */
         .horizontal-scroller {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             cursor: grab;
         }
-        .horizontal-scroller::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+        .horizontal-scroller::-webkit-scrollbar { display: none; }
         .horizontal-scroller:active { cursor: grabbing; }
-        
-        .scroll-item {
-            scroll-snap-align: center;
-            flex-shrink: 0;
-        }
+        .scroll-item { scroll-snap-align: center; flex-shrink: 0; }
+        .skill-progress { height: 2px; background-color: #4B3621; }
     </style>
 </head>
 <body class="selection:bg-orange-100">
@@ -154,7 +150,7 @@
                         <div class="group">
                             <div class="aspect-[16/9] bg-white rounded-2xl shadow-md overflow-hidden mb-4 border border-orange-50"><img src="02.jpg" class="w-full h-full object-contain"></div>
                             <h4 class="serif-title text-brand-coffee text-lg font-bold">產品介紹明信片 (背面)</h4>
-                            <p class="text-xs text-gray-500 leading-relaxed mb-1 mt-4 font-medium italic text-brand-coffee">─ 設計理念與負責範圍同步前述標準 ─</p>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-1 mt-4 italic font-medium">─ 設計理念與負責範圍同步前述標準 ─</p>
                         </div>
                     </div>
                 </div>
@@ -165,20 +161,20 @@
                         <div class="flex w-full h-12 rounded-lg overflow-hidden border border-gray-100 mb-4 shadow-inner">
                             <div class="flex-1 bg-[#6FBA2C]"></div><div class="flex-1 bg-[#FAC03D]"></div><div class="flex-1 bg-[#FFF67F]"></div><div class="flex-1 bg-[#1A1A1A]"></div><div class="flex-1 bg-[#FFFFFF]"></div>
                         </div>
-                        <p class="text-[10px] text-gray-400 leading-relaxed text-center md:text-left">選色理念：以明亮的大地綠與鵝黃展現生機，輔以黑白確保視覺訊息精準傳遞。</p>
+                        <p class="text-[10px] text-gray-400 leading-relaxed text-center md:text-left">選色理念：以大地綠與鵝黃展現生機，確保視覺訊息精準傳遞。</p>
                     </div>
                     <div>
-                        <h5 class="text-[10px] font-bold text-brand-coffee uppercase tracking-[0.2em] mb-4 text-center md:text-left">Typography</h5>
+                        <h5 class="text-[10px] font-bold text-brand-coffee uppercase tracking-[0.2em] mb-4 text-center md:text-left">Typography / 標準字規範</h5>
                         <div class="h-12 flex items-center justify-center md:justify-start bg-site-bg px-4 rounded-lg border border-gray-100 mb-4">
-                            <span class="serif-title text-lg font-bold tracking-tighter text-brand-coffee italic">忘憂飲 ‧ Brand Spec.</span>
+                            <span class="text-lg font-bold tracking-tight text-brand-coffee">忘憂飲 ‧ jf open 粉圓 1.1</span>
                         </div>
-                        <p class="text-[10px] text-gray-400 leading-relaxed text-center md:text-left">選字理念：現代襯線線條，傳遞簡約且富有細節的品牌調性。</p>
+                        <p class="text-[10px] text-gray-400 leading-relaxed text-center md:text-left">選字理念：選用 <span class="text-brand-coffee font-medium">jf open 粉圓 1.1</span>。其圓潤末端與適度間距，精準傳遞品牌親切、無壓的調性。</p>
                     </div>
                 </div>
 
-                <div class="mt-24">
+                <div class="mt-24 text-left">
                     <div class="flex items-end justify-between mb-8">
-                        <h4 class="serif-title text-xl text-brand-coffee font-bold text-left">專題數位延伸：心理測驗企劃</h4>
+                        <h4 class="serif-title text-xl text-brand-coffee font-bold">專題數位延伸：心理測驗企劃</h4>
                         <span class="text-[10px] text-gray-400 uppercase tracking-widest hidden md:block">Scroll to view more →</span>
                     </div>
                     <div class="horizontal-scroller pb-10 gap-8">
@@ -186,7 +182,6 @@
                         <div class="scroll-item w-[300px] md:w-[450px] aspect-[4/3] bg-white rounded-2xl shadow-md overflow-hidden border border-orange-50"><img src="2.jpg" class="w-full h-full object-cover"></div>
                         <div class="scroll-item w-[300px] md:w-[450px] aspect-[4/3] bg-white rounded-2xl shadow-md overflow-hidden border border-orange-50"><img src="3.jpg" class="w-full h-full object-cover"></div>
                         <div class="scroll-item w-[300px] md:w-[450px] aspect-[4/3] bg-white rounded-2xl shadow-md overflow-hidden border border-orange-50"><img src="4.jpg" class="w-full h-full object-cover"></div>
-                        <div class="scroll-item w-[300px] md:w-[450px] aspect-[4/3] bg-white rounded-2xl shadow-md overflow-hidden border border-orange-50"><img src="5.jpg" class="w-full h-full object-cover"></div>
                     </div>
                 </div>
             </div>
@@ -196,23 +191,23 @@
                     <span class="px-3 py-1 bg-brand-coffee text-white text-[10px] tracking-widest uppercase rounded">High School Project</span>
                     <h3 class="serif-title text-2xl ml-4 text-k-dark font-bold">高中專題：米鄉</h3>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
                     <div class="group">
-                        <div class="aspect-square bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50"><img src="hs-1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
-                        <h5 class="serif-title text-md font-bold text-brand-coffee mb-2 italic">作品分項 A</h5>
-                        <p class="text-[10px] text-gray-500 leading-relaxed mb-1"><span class="font-bold text-gray-700">設計理念：</span>傳承在地農業文化，將稻田層次感轉化為幾何圖騰。</p>
+                        <div class="aspect-square bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50"><img src="hs-1.jpg" class="w-full h-full object-cover"></div>
+                        <h5 class="serif-title text-md font-bold text-brand-coffee mb-2">作品分項 A</h5>
+                        <p class="text-[10px] text-gray-500 mb-1"><span class="font-bold text-gray-700">設計理念：</span>傳承在地農業文化，將稻田層次感轉化為幾何圖騰。</p>
                         <p class="text-[10px] text-gray-400"><span class="font-bold text-gray-600">負責範圍：</span>手繪初稿製作、配色規劃</p>
                     </div>
                     <div class="group">
-                        <div class="aspect-square bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50"><img src="hs-2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
-                        <h5 class="serif-title text-md font-bold text-brand-coffee mb-2 italic">作品分項 B</h5>
-                        <p class="text-[10px] text-gray-500 leading-relaxed mb-1"><span class="font-bold text-gray-700">設計理念：</span>重塑鄉鎮品牌形象，提升農產品在年輕市場的競爭力。</p>
+                        <div class="aspect-square bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50"><img src="hs-2.jpg" class="w-full h-full object-cover"></div>
+                        <h5 class="serif-title text-md font-bold text-brand-coffee mb-2">作品分項 B</h5>
+                        <p class="text-[10px] text-gray-500 mb-1"><span class="font-bold text-gray-700">設計理念：</span>重塑鄉鎮品牌形象，提升農產品在年輕市場的競爭力。</p>
                         <p class="text-[10px] text-gray-400"><span class="font-bold text-gray-600">負責範圍：</span>視覺排版、標誌設計</p>
                     </div>
                     <div class="group">
-                        <div class="aspect-square bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50"><img src="hs-3.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
-                        <h5 class="serif-title text-md font-bold text-brand-coffee mb-2 italic">作品分項 C</h5>
-                        <p class="text-[10px] text-gray-500 leading-relaxed mb-1"><span class="font-bold text-gray-700">設計理念：</span>包裝結構創新，讓米糧不只是糧食，更是精緻的禮品。</p>
+                        <div class="aspect-square bg-white rounded-2xl shadow-md overflow-hidden mb-6 border border-orange-50"><img src="hs-3.jpg" class="w-full h-full object-cover"></div>
+                        <h5 class="serif-title text-md font-bold text-brand-coffee mb-2">作品分項 C</h5>
+                        <p class="text-[10px] text-gray-500 mb-1"><span class="font-bold text-gray-700">設計理念：</span>包裝結構創新，讓米糧轉化為具備溫度的精緻禮品。</p>
                         <p class="text-[10px] text-gray-400"><span class="font-bold text-gray-600">負責範圍：</span>印刷材質選樣、成品監製</p>
                     </div>
                 </div>
@@ -223,7 +218,8 @@
     <section id="contact" class="section-spacing max-w-3xl mx-auto px-6 text-center border-t border-orange-100">
         <h2 class="serif-title text-3xl text-brand-coffee font-bold mb-6">Contact.</h2>
         <p class="text-sm text-gray-500 mb-10 leading-relaxed">
-            如果您有美編設計需求，或想進一步了解我的作品，<br>歡迎點擊下方按鈕填寫聯繫表單。
+            如果您有美編設計需求，或想進一步了解我的作品，<br>
+            歡迎點擊下方按鈕填寫聯繫表單。
         </p>
         <a href="https://forms.gle/Nf8asyV4kQ4NqfMc8" target="_blank" class="inline-block bg-brand-coffee text-white px-12 py-4 rounded-full text-[12px] font-bold uppercase tracking-widest hover:bg-black transition-all shadow-lg">
             填寫聯繫表單 (Google Form)
